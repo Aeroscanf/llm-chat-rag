@@ -14,7 +14,7 @@ st.title("LLM Chatbot RAG Assistant")
 
 @st.cache_resource
 def load_model():
-    model = ChatModel(model_id="shenzhi-wang/Llama3-8B-Chinese-Chat", device="cuda")
+    model = ChatModel(model_id="shenzhi-wang/Llama3-8B-Chinese-Chat", device="cpu")
     return model
 
 
