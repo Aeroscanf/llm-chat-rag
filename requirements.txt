@@ -2,3 +2,9 @@ streamlit
 pandas
 scikit-learn
 altair
+transformers
+torch
+python-dotenv
+langchain_community
+langchain
+bitsandbytes
