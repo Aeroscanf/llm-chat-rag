@@ -12,18 +12,24 @@ CACHE_DIR = os.path.normpath(
 
 
 class ChatModel:
-    def __init__(self, model_id: str = "google/gemma-2b-it", device="cuda"):
-
+    def __init__(self, model_id: str = "google/gemma-2b-it", device="cpu"):
+        '''
         ACCESS_TOKEN = os.getenv(
             "ACCESS_TOKEN"
         )  # reads .env file with ACCESS_TOKEN=<your hugging face access token>
+        '''
 
+        ACCESS_TOKEN = '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'
+        
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_id, cache_dir=CACHE_DIR, token=ACCESS_TOKEN
         )
+
+        '''
         quantization_config = BitsAndBytesConfig(
             load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16
         )
+        '''
 
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id,
